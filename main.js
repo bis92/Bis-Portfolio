@@ -11,7 +11,7 @@ document.addEventListener('scroll', () => {
     }
 })
 
-// Navigation When on Click Button
+// Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
     const target = event.target;
@@ -19,6 +19,22 @@ navbarMenu.addEventListener('click', (event) => {
     if (link == null) {
         return;
     }
-    const targetMenu = document.querySelector(link);
-    targetMenu.scrollIntoView({ behavior: 'smooth'});
+    scrollIntoView(link);
 })
+
+// Handle click on "contact me" button on home
+const contactBtn = document.querySelector('.home__contact');
+contactBtn.addEventListener('click', (event) => {
+    const target = event.target;
+    const link = target.dataset.link;
+    if (link == null) {
+        return;
+    }
+    scrollIntoView(link);
+})
+
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({ behavior: 'smooth' });
+}
