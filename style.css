@@ -12,6 +12,7 @@
     --color-blue: #73aace;
     --color-yellow: #fff7d1;
     --color-orange: #feb546;
+    --color-cover: #E1F5FF;
 
     /* Font Size */
     --font-large: 48px;
@@ -108,7 +109,7 @@ p {
 }
 
 #navbar.navbar--dark {
-    background-color: #E1F5FF;
+    background-color: var(--color-cover);
     padding: 8px;
 }
 
@@ -441,12 +442,12 @@ p {
 
 /* Contact */
 #contact {
-    background-color: lightblue;
+    background-color: var(--color-cover);
 }
 
 .contact__title,
 .contact__email {
-    color: var(--color-white);
+    color: var(--color-dark-white);
 }
 
 .contact__title {
@@ -460,11 +461,32 @@ p {
 
 .contact__links i {
     transition: all var(--animation-duration) ease-in;
+    color: var(--color-dark-white);
 }
 
 .contact__links i:hover {
     transform: scale(1.1);
     color: var(--color-yellow);
+}
+
+.arrow-up {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    color: var(--color-white);
+    background-color: var(--color-cover);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all var(--animation-duration) ease-in;
+    pointer-events: none;
+}
+
+.arrow-up.visible {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* For below 768px screen width */
