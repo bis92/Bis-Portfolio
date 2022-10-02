@@ -19,6 +19,7 @@ navbarMenu.addEventListener('click', (event) => {
     if (link == null) {
         return;
     }
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
 })
 
@@ -89,6 +90,12 @@ workBtnContainer.addEventListener('click', (e) => {
         projectContainer.classList.remove('anim-out');
     }, 300)
 });
+
+// Handle Menu Toggle
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+})
 
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
